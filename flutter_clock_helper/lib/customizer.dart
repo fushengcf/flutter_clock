@@ -180,7 +180,7 @@ class _ClockCustomizerState extends State<ClockCustomizer> {
         child: Container(
            decoration: BoxDecoration(
           color: Color.fromRGBO(26, 59, 50, 0.5),
-          borderRadius: BorderRadius.circular(ScreenUtil().radius(20)),
+          borderRadius: BorderRadius.circular(20),
         ),
           child: widget._clock(_model),
         ),
