@@ -178,23 +178,16 @@ class _ClockCustomizerState extends State<ClockCustomizer> {
       child: AspectRatio(
         aspectRatio: 5 / 3,
         child: Container(
-           decoration: BoxDecoration(
-          color: Color.fromRGBO(26, 59, 50, 0.5),
-          borderRadius: BorderRadius.circular(20),
-        ),
+          decoration: BoxDecoration(),
           child: widget._clock(_model),
         ),
       ),
     );
 
-
-
     return MaterialApp(
-      theme: ThemeData.light(),
-      darkTheme: ThemeData.dark(),
-      themeMode: _themeMode,
       debugShowCheckedModeBanner: false,
       home: Scaffold(
+        backgroundColor: Color.fromRGBO(26, 59, 50, 0),
         resizeToAvoidBottomInset: false,
         endDrawer: _configDrawer(context),
         body: SafeArea(
@@ -206,18 +199,7 @@ class _ClockCustomizerState extends State<ClockCustomizer> {
               });
             },
             child: Stack(
-              children: [
-                clock,
-                if (_configButtonShown)
-                  Positioned(
-                    top: 0,
-                    right: 0,
-                    child: Opacity(
-                      opacity: 0.7,
-                      child: _configButton(),
-                    ),
-                  ),
-              ],
+              children: [clock],
             ),
           ),
         ),
